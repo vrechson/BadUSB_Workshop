@@ -3,14 +3,14 @@
 
 void setup() {
   DigiKeyboard.update();
-  //empty
 }
+
 void loop() {
-  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); // meta+r
-  delay(50);
-  DigiKeyboard.println(F("powershell"));
-  delay(200);
-  DigiKeyboard.print(F("$client = New-Object System.Net.WebClient"));
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); /* Open execute dialog. */
+  DigiKeyboard.delay(50); /* Delay until write. */
+  DigiKeyboard.println(F("powershell")); /* open powershell */
+  DigiKeyboard.delay(200); /* Maybe you need to change this delay */
+  DigiKeyboard.print(F("$client = New-Object System.Net.WebClient")); /* Commands to update windows background image */
   DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
   DigiKeyboard.delay(200);
   DigiKeyboard.print(F("$client.DownloadFile(\"http://www.indiewire.com/wp-content/uploads/2017/07/rick-and-morty.png\" , \"rick-and-morty.png\")"));
@@ -27,5 +27,5 @@ void loop() {
   DigiKeyboard.delay(200);
   DigiKeyboard.print(F("exit"));
   DigiKeyboard.sendKeyStroke(KEY_ENTER, 0);
-  for(;;){ }
+  for(;;){ } /* Stop inserting commands and quit. */
 }
