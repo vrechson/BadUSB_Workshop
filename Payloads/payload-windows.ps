@@ -6,5 +6,5 @@ Set-ItemProperty -path 'HKCU:\Software\Microsoft\Internet Explorer\Desktop\Gener
 Start-Sleep -s 2
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 Start-Sleep -s 5
-RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters 1, True
+rundll32.exe user32.dll, UpdatePerUserSystemParameters, 0, $false
 Start-Sleep -s 5
