@@ -5,6 +5,10 @@ Start-Sleep -s 2
 Set-ItemProperty -path 'HKCU:\Software\Microsoft\Internet Explorer\Desktop\General' -name wallpaper -value "$home\rick-and-morty.png"
 Start-Sleep -s 2
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
-Start-Sleep -s 5
+Start-Sleep -s 2
 rundll32.exe user32.dll, UpdatePerUserSystemParameters, 0, $false
-Start-Sleep -s 5
+Start-Sleep -s 2
+rundll32.exe user32.dll, UpdatePerUserSystemParameters, 1, True
+Start-Sleep -s 2
+rundll32.exe user32.dll, UpdatePerUserSystemParameters 1, True
+Start-Sleep -s 2
